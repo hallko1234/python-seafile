@@ -1,23 +1,24 @@
-
 class ClientHttpError(Exception):
-    """This exception is raised if the returned http response is not as
-    expected"""
+    """
+    This exception is raised if the returned HTTP response
+    is not as expected.
+    """
     def __init__(self, code, message):
-        super(ClientHttpError, self).__init__()
+        super().__init__()
         self.code = code
         self.message = message
 
     def __str__(self):
-        return 'ClientHttpError[%s: %s]' % (self.code, self.message)
-
-
+        return f'ClientHttpError[{self.code}: {self.message}]'
 
 
 class DoesNotExist(Exception):
-    """Raised when not matching resource can be found."""
+    """
+    Raised when a matching resource cannot be found.
+    """
     def __init__(self, msg):
-        super(DoesNotExist, self).__init__()
+        super().__init__()
         self.msg = msg
 
     def __str__(self):
-        return 'DoesNotExist: %s' % self.msg
+        return f'DoesNotExist: {self.msg}'
